@@ -1,14 +1,21 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import QuoteCard from '../components/QuoteCard';
+import { upvoteQuote } from '../actions/quotes';
+import { downvoteQuote } from '../actions/quotes';
+import { removeQuote } from '../actions/quotes';
+
 
 class Quotes extends Component {
 
   renderQuoteCard = (quote, id) => {
-    // console.log(quote)
+    console.log(quote)
+    console.log(this)
     return (
     <div key={id}>
-      {<QuoteCard quote={quote}/>}
+            {<QuoteCard quote={quote} />}
+
+      {/* {<QuoteCard quote={quote} handleUpvote={this.props.dispatch(upvoteQuote)} handleDownvote={this.props.dispatch(downvoteQuote)} handleDelete={this.props.dispatch(removeQuote)}/>} */}
     </div>
     )
   }
@@ -36,7 +43,8 @@ class Quotes extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
+  console.log(state)
   return { state }
 }
 

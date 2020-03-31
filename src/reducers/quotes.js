@@ -5,15 +5,17 @@ export default (state = {quotes: []}, action) => {
 
   switch (action.type) {
     case 'ADD_QUOTE':
+      console.log(action.quote)
+
       return { 
         ...state,
         quotes: [...state.quotes, action.quote]
       }
-    // case 'REMOVE_QUOTE':
+    case 'REMOVE_QUOTE':
+      return {}
+    // case 'UPVOTE_QUOTE':
     //   return {}
-    // case 'ADD_QUOTE':
-    //   return {}
-    // case 'REMOVE_QUOTE':
+    // case 'DOWNVOTE_QUOTE':
     //   return {}
     default:
       return state
