@@ -7,6 +7,7 @@
     // case 'REMOVE_QUOTE':
     //   return [...state]
     case 'UPVOTE_QUOTE':
+      console.log("inside upvote reducer switch")
       console.log(action)
 
       return [...state]
