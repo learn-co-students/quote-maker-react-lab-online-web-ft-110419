@@ -31,10 +31,7 @@ class Quotes extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-4">
-              {/*
-                TODO: Render Quotes With QuoteCard component and pass down callback props for removing, upvoting and downvoting quotes
-               */}
-               {this.props.state.quotes.quotes.map((quote, id) => this.renderQuoteCard(quote, id))}
+               {this.props.state.quotes.map((quote, id) => this.renderQuoteCard(quote, id))}
             </div>
           </div>
         </div>
@@ -49,7 +46,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  console.log("upvote!")
+  console.log("inside quotes mapDispatchToProps function")
   return {
     upvoteQuote: (quote) => {
       dispatch(upvoteQuote(quote.id))

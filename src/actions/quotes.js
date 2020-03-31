@@ -13,6 +13,7 @@ export const removeQuote = (quoteId) => {
 };
 
 export const upvoteQuote = (quoteId) => {
+  console.log("inside upvote action")
     return {
       type: 'UPVOTE_QUOTE',
       quoteId

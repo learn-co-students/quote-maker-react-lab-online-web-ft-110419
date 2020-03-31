@@ -1,22 +1,17 @@
-// import uuid from 'uuid';
-
-export default (state = {quotes: []}, action) => {
-  // export default (state = [], action) => {
+  export default (state = [], action) => {
 
   switch (action.type) {
     case 'ADD_QUOTE':
-      console.log(action.quote)
+      return [...state, action.quote]
 
-      return { 
-        ...state,
-        quotes: [...state.quotes, action.quote]
-      }
-    case 'REMOVE_QUOTE':
-      return {}
+    // case 'REMOVE_QUOTE':
+    //   return [...state]
     case 'UPVOTE_QUOTE':
-      return { }
+      console.log(action)
+
+      return [...state]
     // case 'DOWNVOTE_QUOTE':
-    //   return {}
+    //   return [state]
     default:
       return state
   }
