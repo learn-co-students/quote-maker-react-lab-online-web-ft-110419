@@ -8,15 +8,10 @@ export default (state = [], action) => {
     case 'ADD_QUOTE':
       console.log(action.quote)
       console.log(state)
-      // let newQuote = {
-      //   id: uuid(),
-      //   content: action.quote.content,
-      //   author: action.quote.author
-      // }
       return { 
-        // [state, action.quote]
+        ...state.concat(action.quote)
         // ...state,
-        quotes: [...state.quotes, action.quote]
+        // quotes: [...state.quotes, action.quote]
       }
     // case 'REMOVE_QUOTE':
     //   return {}
@@ -26,6 +21,5 @@ export default (state = [], action) => {
     //   return {}
     default:
       return state
-
   }
 }
