@@ -16,14 +16,14 @@ const QuoteCard = (props) => {
           <button
             type="button"
             className="btn btn-primary"
-            onClick={this.handleUpvote}
+            onClick={props.handleUpvote}
           >
             Upvote
           </button>
           <button
             type="button"
             className="btn btn-secondary"
-            // onClick={this.handleDownvote}
+            // onClick={props.handleDownvote}
 
           >
             Downvote
@@ -31,7 +31,7 @@ const QuoteCard = (props) => {
           <button
             type="button"
             className="btn btn-danger"
-            // onClick={this.handleDelete}
+            // onClick={props.handleDelete}
 
           >
             <span aria-hidden="true">&times;</span>

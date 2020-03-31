@@ -13,8 +13,8 @@ export default (state = {quotes: []}, action) => {
       }
     case 'REMOVE_QUOTE':
       return {}
-    // case 'UPVOTE_QUOTE':
-    //   return {}
+    case 'UPVOTE_QUOTE':
+      return { }
     // case 'DOWNVOTE_QUOTE':
     //   return {}
     default:
