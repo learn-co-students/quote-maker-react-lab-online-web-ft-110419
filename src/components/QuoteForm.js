@@ -22,15 +22,15 @@ class QuoteForm extends Component {
     // Create quote object from state
     // Pass quote object to action creator
     const id = uuid()
-    let quote = {id: id, content: this.state.content, author: this.state.author}
-    console.log(this.props)
-    this.props.addQuote(quote)
-
-    // Update component state to return to default state
+    let quote = {id: id, content: this.state.content, author: this.state.author, votes: 0}
     this.setState({
       content: '', 
       author: '' 
     })
+    this.props.addQuote(quote)
+
+    // Update component state to return to default state
+
   }
 
   render() {
@@ -91,7 +91,5 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-//add arguments to connect as needed
 export default connect(mapStateToProps, mapDispatchToProps)(QuoteForm);
-// export default connect(null, mapDispatchToProps)(QuoteForm);
 
