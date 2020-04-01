@@ -6,6 +6,9 @@ export const addQuote = (quote) => {
 };
 
 export const removeQuote = (quoteId) => {
+  console.log("inside removeQuote action")
+  console.log(quoteId)
+
     return {
       type: 'REMOVE_QUOTE',
       quoteId

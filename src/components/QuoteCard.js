@@ -1,4 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { removeQuote } from '../actions/quotes';
+
+
 
 const QuoteCard = (props) => {
   console.log(props)
@@ -16,7 +20,7 @@ const QuoteCard = (props) => {
           <button
             type="button"
             className="btn btn-primary"
-            onClick={props.handleUpvote}
+            // onClick={props.handleUpvote}
           >
             Upvote
           </button>
@@ -31,7 +35,7 @@ const QuoteCard = (props) => {
           <button
             type="button"
             className="btn btn-danger"
-            // onClick={props.handleDelete}
+            onClick={event => props.removeQuote(props.quote.id)}
 
           >
             <span aria-hidden="true">&times;</span>
@@ -44,4 +48,6 @@ const QuoteCard = (props) => {
   )
 }
 
-export default QuoteCard;
+// export default QuoteCard;
+export default connect(null, {removeQuote})(QuoteCard);
+
