@@ -13,11 +13,7 @@ class Quotes extends Component {
     console.log(this)
     return (
     <div key={id}>
-        {<QuoteCard quote={quote} removeQuote={removeQuote} />}
-
-            {/* {<QuoteCard quote={quote} />} */}
-        {/* {<QuoteCard quote={quote} handleUpvote={mapDispatchToProps} />} */}
-      {/* {<QuoteCard quote={quote} handleUpvote={this.props.dispatch} handleDownvote={dispatch} handleDelete={dispatch(removeQuote)}/>} */}
+        {<QuoteCard quote={quote} removeQuote={removeQuote} upvoteQuote={upvoteQuote} downvoteQuote={downvoteQuote} />}
     </div>
     )
   }
@@ -47,20 +43,9 @@ const mapStateToProps = (state) => {
   return { state }
 }
 
-// const handleRemove = () => {
-//   console.log("handle remove function")
-// }
-
-// const mapDispatchToProps = (dispatch) => {
-//   console.log("inside quotes mapDispatchToProps function")
-//   return {
-//     upvoteQuote: (quote) => {
-//       dispatch(upvoteQuote(quote.id))
-//     }
-//   } 
-// }
-
-
-
 //add arguments to connect as needed
-export default connect(mapStateToProps, {removeQuote})(Quotes);
+// export default connect(mapStateToProps)(Quotes);
+
+// export default connect(mapStateToProps, {removeQuote})(Quotes);
+export default connect(mapStateToProps, {removeQuote, upvoteQuote, downvoteQuote})(Quotes);
+

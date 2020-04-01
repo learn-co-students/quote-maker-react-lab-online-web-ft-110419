@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { removeQuote } from '../actions/quotes';
+import { upvoteQuote } from '../actions/quotes';
+import { downvoteQuote } from '../actions/quotes';
 
 
 
@@ -20,14 +22,14 @@ const QuoteCard = (props) => {
           <button
             type="button"
             className="btn btn-primary"
-            // onClick={props.handleUpvote}
+            onClick={event => props.upvoteQuote(props.quote.id)}
           >
             Upvote
           </button>
           <button
             type="button"
             className="btn btn-secondary"
-            // onClick={props.handleDownvote}
+            onClick={event => props.downvoteQuote(props.quote.id)}
 
           >
             Downvote
@@ -48,6 +50,15 @@ const QuoteCard = (props) => {
   )
 }
 
+const mapStateToProps = (state) => {
+  console.log(state)
+  return { state }
+}
+
 // export default QuoteCard;
-export default connect(null, {removeQuote})(QuoteCard);
+// export default connect(null, {removeQuote})(QuoteCard);
+// export default connect(null, {removeQuote}, {upvoteQuote}, {downvoteQuote})(QuoteCard);
+// export default connect(null, [{removeQuote}, {upvoteQuote}, {downvoteQuote}])(QuoteCard);
+export default connect(mapStateToProps, {removeQuote, upvoteQuote, downvoteQuote})(QuoteCard);
+
 
