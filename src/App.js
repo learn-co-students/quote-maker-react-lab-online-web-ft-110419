@@ -14,7 +14,7 @@ class App extends Component {
         </div>
         <hr />
         {< QuoteForm />}
-        {< Quotes store ={this.props.store}/>}
+        {< Quotes />}
       </div>
     );
   }
