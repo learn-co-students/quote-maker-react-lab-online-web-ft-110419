@@ -14,24 +14,16 @@ export default (state = [], action) => {
       return state.filter(quote => quote.id !== action.quoteId);
 
     case UPVOTE_QUOTE:
-      return state.map(quote => {
-        return quote.id === action.quoteId
-          ? { ...quote, vote: quote.vote + 1 }
-          : quote;
-      });
+      return state.map(q =>
+        q.id === action.quoteId ? { ...q, votes: q.votes + 1 } : q
+      );
 
     case DOWNVOTE_QUOTE:
-      return state.map(quote => {
-        if (
-          quote.id === action.quoteId &&
-          quote.votes >= 1 &&
-          typeof quote.votes === "number"
-        ) {
-          return { ...quote, vote: quote.vote - 1 };
-        } else {
-          return quote;
-        }
-      });
+      return state.map(q =>
+        q.id === action.quoteId && q.votes > 0
+          ? { ...q, votes: q.votes - 1 }
+          : q
+      );
 
     default:
       return state;
