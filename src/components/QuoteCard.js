@@ -1,10 +1,4 @@
 import React from 'react';
-// import { connect } from 'react-redux';
-// import { removeQuote } from '../actions/quotes';
-// import { upvoteQuote } from '../actions/quotes';
-// import { downvoteQuote } from '../actions/quotes';
-
-
 
 const QuoteCard = (props) => {
   console.log(props)
@@ -50,15 +44,4 @@ const QuoteCard = (props) => {
   )
 }
 
-// const mapStateToProps = (state) => {
-//   console.log(state)
-//   return { state }
-// }
-
 export default QuoteCard;
-// export default connect(null, {removeQuote})(QuoteCard);
-// export default connect(null, {removeQuote}, {upvoteQuote}, {downvoteQuote})(QuoteCard);
-// export default connect(null, [{removeQuote}, {upvoteQuote}, {downvoteQuote}])(QuoteCard);
-// export default connect(mapStateToProps, {removeQuote, upvoteQuote, downvoteQuote})(QuoteCard);
-
-
