@@ -13,7 +13,7 @@ class Quotes extends Component {
     console.log(this)
     return (
     <div key={id}>
-        {<QuoteCard  quote={quote} removeQuote={removeQuote} upvoteQuote={upvoteQuote} downvoteQuote={downvoteQuote} />}
+        {<QuoteCard  quote={quote} removeQuote={this.props.removeQuote} upvoteQuote={this.props.upvoteQuote} downvoteQuote={this.props.downvoteQuote} />}
     </div>
     )
   }
