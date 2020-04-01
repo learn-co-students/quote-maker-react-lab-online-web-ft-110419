@@ -11,7 +11,6 @@ class QuoteForm extends Component {
 
 
   handleOnChange = event => {
-    // Handle Updating Component State
     this.setState({
       [event.target.name]: event.target.value
     })
