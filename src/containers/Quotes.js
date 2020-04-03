@@ -21,7 +21,7 @@ class Quotes extends Component {
                 TODO:
                 map to quote card but addQuote is wrong
                 {addQuote.map(quote => <QuoteCard key={quote.id} quote={quote} />)}
-
+                how to does quote get passed in?/
                 Render Quotes With QuoteCard component and pass down callback props for removing, upvoting and downvoting quotes
                */}
             </div>
