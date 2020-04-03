@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import QuoteCard from '../components/QuoteCard';
-import { addQuote } from '../actions/quotes';
+import { removeQuote, upvoteQuote, downvoteQuote } from '../actions/quotes';
 
 class Quotes extends Component {
 
   render() {
+    const { quotes, removeQuote, upvoteQuote, downvoteQuote } = this.props;
     return (
       <div>
-        const {addQuote} = this.props;
         <hr />
         <div className="row justify-content-center">
           <h2>Quotes</h2>
@@ -17,13 +17,7 @@ class Quotes extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-4">
-              {/*
-                TODO:
-                map to quote card but addQuote is wrong
-                {addQuote.map(quote => <QuoteCard key={quote.id} quote={quote} />)}
-                how to does quote get passed in?/
-                Render Quotes With QuoteCard component and pass down callback props for removing, upvoting and downvoting quotes
-               */}
+              {quotes.map(quote => <QuoteCard key={quote.id} upvoteQuote={upvoteQuote} downvoteQuote={downvoteQuote} removeQuote={removeQuote} quote={quote} />)}
             </div>
           </div>
         </div>
@@ -33,20 +27,9 @@ class Quotes extends Component {
 }
 
 const mapStateToProps = state => {
-  return({
+  return ({
     quotes: state.quotes
   })
 }
 
-const mapDispatchToProps = dispatch => {
-  return{
-    add_quote : () => dispatch({type: 'ADD_QUOTE'}),
-    remove_quote : () => dispatch({type: 'REMOVE_QUOTE'}),
-    upvote_quote : () => dispatch({type: 'UPVOTE_QUOTE'}),
-    downvote_quote : () => dispatch({type: 'DOWNVOTE_QUOTE'}),
-  }
-}
-
-//add arguments to connect as needed
-export default connect(mapStateToProps, mapDispatchToProps)(Quotes);
-//null, mapDispatchToProps
+export default connect(mapStateToProps, { removeQuote, upvoteQuote, downvoteQuote })(Quotes);

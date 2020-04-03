@@ -1,7 +1,8 @@
 import React from 'react';
+import { ProgressPlugin } from 'webpack';
 
 //needs other props from actions 
-const QuoteCard = ({quote}) =>
+const QuoteCard = ({quote, removeQuote, upvoteQuote, downvoteQuote}) =>
   <div>
     <div className="card card-inverse card-success card-primary mb-3 text-center">
       <div className="card-block">
@@ -13,6 +14,7 @@ const QuoteCard = ({quote}) =>
       <div className="float-right">
         <div className="btn-group btn-group-sm" role="group" aria-label="Basic example">
           <button
+          onClick={() => upvoteQuote(quote.id)}
             type="button"
             className="btn btn-primary"
           >
@@ -21,11 +23,13 @@ const QuoteCard = ({quote}) =>
           <button
             type="button"
             className="btn btn-secondary"
+            onClick={() => downvoteQuote(quote.id)}
           >
             Downvote
           </button>
           <button
             type="button"
+            onClick={() => removeQuote(quote.id)}
             className="btn btn-danger"
           >
             <span aria-hidden="true">&times;</span>

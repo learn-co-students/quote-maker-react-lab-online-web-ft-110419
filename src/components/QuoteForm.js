@@ -18,6 +18,13 @@ class QuoteForm extends Component {
     )
   }
 
+  // handleOnChange = event => {
+  //   const target = event.target;
+  //   this.setState({
+  //     [target.name]: target.value
+  //   });
+  // };
+
   handleOnSubmit = event => {
     event.preventDefault();
     const quote = {...this.state, id: uuid() };
@@ -27,8 +34,6 @@ class QuoteForm extends Component {
       content: '',
       author: ''
     })
-    // Pass quote object to action creator
-    // Update component state to return to default state
   }
 
   render() {
