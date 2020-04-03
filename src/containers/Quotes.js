@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import QuoteCard from '../components/QuoteCard';
+import { addQuote } from '../actions/quotes';
 
 class Quotes extends Component {
 
   render() {
     return (
       <div>
+        const {addQuote} = this.props;
         <hr />
         <div className="row justify-content-center">
           <h2>Quotes</h2>
@@ -15,6 +17,7 @@ class Quotes extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-4">
+              {addQuote.map(quote => <QuoteCard key={quote.id} quote={quote} />)}
               {/*
                 TODO:
 

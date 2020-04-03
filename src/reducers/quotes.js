@@ -10,7 +10,7 @@ export default (state = [], action) => {
     case "DOWNVOTE_QUOTE":
       return state; //some function
     
-    return state;
+    // return state;
 
     default:
       return state;
