@@ -17,9 +17,10 @@ class Quotes extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-4">
-              {addQuote.map(quote => <QuoteCard key={quote.id} quote={quote} />)}
               {/*
                 TODO:
+                map to quote card but addQuote is wrong
+                {addQuote.map(quote => <QuoteCard key={quote.id} quote={quote} />)}
 
                 Render Quotes With QuoteCard component and pass down callback props for removing, upvoting and downvoting quotes
                */}
