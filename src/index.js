@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux'
-import rootReducer from './reducers/index'
+import rootReducer from './reducers'
 
 let store = createStore(rootReducer)
 
@@ -12,4 +12,4 @@ ReactDOM.render(
     <App />
   </Provider>,
   document.getElementById('root')
-);
+); 
